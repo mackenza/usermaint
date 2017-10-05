@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/milligram.min.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/milligram.min.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <div id="button-row">
     <a class="button" href="#">Add User</a>
     <a class="button" href="#">Edit User</a>
     <a class="button" href="#">Delete User</a>
+  </div>
+  <div id="add-form">
     <form>
       <fieldset>
+        <label for="userIdField">User ID</label>
+        <input placeholder="User ID" id="userIdField" type="text">
         <label for="nameField">Name</label>
-        <input placeholder="CJ Patoilo" id="nameField" type="text">
-        <label for="ageRangeField">Age Range</label>
-        <select id="ageRangeField">
-          <option value="0-13">0-13</option>
-          <option value="14-17">14-17</option>
-          <option value="18-23">18-23</option>
-          <option value="24+">24+</option>
+        <input placeholder="Name" id="nameField" type="text">
+        <label for="emailField">Email</label>
+        <input placeholder="Email" id="emailField" type="text">
+        <label for="licenseField">License Type</label>
+        <select id="licenseField">
+          <option value="Internal">Internal</option>
+          <option value="External">External</option>
+          <option value="Alert">Alert</option>
         </select>
-        <label for="commentField">Comment</label>
-        <textarea placeholder="Hi CJ …" id="commentField"></textarea>
-        <div class="float-right">
-          <input id="confirmField" type="checkbox">
-          <label class="label-inline" for="confirmField">Send a copy to yourself</label>
-        </div>
-        <input class="button-primary" value="Send" type="submit">
+        <div>
+          <input id="disabledField" type="checkbox">
+          <label class="label-inline" for="disabledField">Account disabled?</label>
+        </div>  
+        <input class="button-primary" value="Add" type="submit">
       </fieldset>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>
