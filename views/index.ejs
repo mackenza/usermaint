@@ -6,6 +6,17 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/milligram.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script>
+    function toggleAddForm() {
+      var formDiv = document.getElementById("add-form");
+      if (formDiv.style.visibility === "hidden") {
+        formDiv.style.visibility = "visible";
+      } else {
+        formDiv.style.visibility = "hidden";
+      }
+    } 
+  </script>
 </head>
 
 <body>
@@ -13,7 +24,7 @@
     <%= title %>
   </h1>
   <div id="button-row">
-    <a class="button" href="#">Add User</a>
+    <a class="button" href="#" onclick="toggleAddForm()">Add User</a>
     <a class="button" href="#">Edit User</a>
     <a class="button" href="#">Delete User</a>
   </div>
@@ -32,14 +43,35 @@
           <option value="External">External</option>
           <option value="Alert">Alert</option>
         </select>
+        <label for="titleField">Title</label>
+        <input placeholder="Title" id="titleField" type="text">
+        <label for="phoneField">Phone #s</label>
+        <input placeholder="Phone #" id="phoneField" type="text">
+        <input placeholder="Mobile #" id="mobileField" type="text">
+        <input placeholder="Fax #" id="faxField" type="text">
+        <input placeholder="Pager #" id="pagerField" type="text">
+        <select id="locationField">
+          <option value="HQ">HQ</option>
+          <option value="Ottawa">Ottawa</option>
+          <option value="Toronto">Toronto</option>
+          <option value="Columbus">Columbus</option>
+          <option value="Houston">Houston</option>
+          <option value="Mexico City">Mexico City</option>
+        </select>  
+        <select id="countryField">
+          <option value="Canada">Canada</option>
+          <option value="USA">USA</option>
+          <option value="Mexico">Mexico</option>
+        </select>
+        <label for="notesField">Notes</label>
+        <input placeholder="Notes" id="notesField" type="text">
         <div>
           <input id="disabledField" type="checkbox">
           <label class="label-inline" for="disabledField">Account disabled?</label>
-        </div>  
+        </div>
         <input class="button-primary" value="Add" type="submit">
       </fieldset>
     </form>
   </div>
 </body>
-
 </html>
